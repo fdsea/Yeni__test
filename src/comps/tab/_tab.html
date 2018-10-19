@@ -1,0 +1,21 @@
+{% import "partials/_mixins.html" as mixins %}
+{% macro content(s) %}
+
+{% set _bgUrl = s.bgUrl or '' %}
+{% set _dscVideoUrl = s.dscVideoUrl or '' %}
+{% set _mobVideoUrl = s.mobVideoUrl or '' %}
+{% set _icn = s.icn or '' %}
+{% set _dimension = s.dimension or '' %}
+{% set _price = s.price or '' %}
+
+<div class="tab"
+    data-bg-url = "{{ _bgUrl }}"
+		data-video-url = "{{ _dscVideoUrl }}"
+    data-video-mobile-url = "{{ _mobVideoUrl }}">
+  <span class="tab__amount">{{mixins.icon(_icn)}}</span>
+  <span class="tab__dimention">{{ _dimension }}</span>
+  <span class="tab__price">{{ _price }}</span>
+  <button class="tab__action-btn">Join Now</button>
+</div>
+
+{% endmacro %}

@@ -1,0 +1,14 @@
+{% import "partials/_mixins.html" as mixins %}
+{% macro content(s) %}
+
+{% set _content = s.content or '' %}
+{% set _icon = s.icon or '' %}
+
+<div class="benefit-item">
+  <span class="benefit-item__icon">
+    {{ mixins.icon(_icon) }}
+  </span>
+  <span class="benefit-item__content">{{ _content }}</span>
+</div>
+
+{% endmacro %}
